@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" id="viewport" content="width=device-width">
+    <title>Spike riotjs</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+  </head>
+
+  <!-- application root -->
+  <body id="app">
+
+    <div class="container">
+      <h1>The amazing spike with Riotjs</h1>
+      <p>This is the main page of the application.</p>
+
+      <section id="chatapp">
+        <ul id="messages-list"></ul>
+      </section>
+
+    </div>
+
+    <!-- templates -->
+    <script type="text/template" id="message-template">
+      <li id="message_{id}" data-task="{id}">
+        {message}
+      </li>
+    </script>
+
+    <!-- scripts -->
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/spike.js"></script>
+  </body>
+
+</html>

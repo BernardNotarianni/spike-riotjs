@@ -1,0 +1,20 @@
+{
+  "name": "spike-riots",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BernardNotarianni/spike-riotjs.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "devDependencies": {
+    "shelljs": "latest",      
+    "gaze": "latest",
+    "bootstrap": "latest",
+    "riotjs": "latest"
+  }
+
+}
