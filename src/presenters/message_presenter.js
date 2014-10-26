@@ -9,12 +9,15 @@ function chatterPresenter(element, options) {
 
   element.on('keyup', '#new-message', function (e) {
     var val = $.trim(this.value);
-    console.log("message= " + val);
+    if (val && e.which === 13) {
+//      todo.add(val);
+      this.value = '';
+      console.log("message= " + val);
+    }
   });
 
   // Listen to model events
   chatter.on("add", add);
-
 
   // Private functions
   function add(message) {
