@@ -10,9 +10,8 @@ function chatterPresenter(element, options) {
   element.on('keyup', '#new-message', function (e) {
     var val = $.trim(this.value);
     if (val && e.which === 13) {
-//      todo.add(val);
+      add(val);
       this.value = '';
-      console.log("message= " + val);
     }
   });
 
