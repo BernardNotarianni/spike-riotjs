@@ -16,9 +16,10 @@ describe('spike riots', function() {
     var chatter = new Chatter();
     [].forEach.call(arguments, function(item) { chatter.add(item); });
     return chatter;
-  }
+  };
 
   function assertItems(items, expected) {
     assert.equal(JSON.stringify(items), JSON.stringify(expected));
-  }
+  };
+
 });

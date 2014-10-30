@@ -1,6 +1,6 @@
 'use strict';
 
-chatter = new Chatter();
+var chatter = new Chatter();
 
 
 (function ($) {

@@ -21,9 +21,11 @@ function concat() {
  
   var js = cat("bower_components/riotjs/riot.js");
 
-  js += cat("src/*.js");
+  js += header;
   js += cat("src/models/*.js");
   js += cat("src/presenters/*.js");
+  js += cat("src/*.js");
+  js += footer;
 
   js.to("dist/spike.js");
 
@@ -32,14 +34,14 @@ function concat() {
 // Test the API on server side (node.js)
 target.test = function() {
 
-  init();
+  concat();
 
   // generate API files
-  (header + cat("src/api/*.js") + footer).to("dist/api.js");
+//  (header + cat("src/api/*.js") + footer).to("dist/api.js");
 
   // run tests
   require("./test/index.js");
-}
+};
 
 
 // concat target
