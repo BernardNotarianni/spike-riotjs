@@ -1,16 +1,11 @@
 'use strict';
 
-describe('spike riots', function() {
-    describe('#add', function() {
-        it('adds message to the chatter list', function () {
-            var chatter = createMessages('hello world', 'yeah');
-            assertItems(chatter.messages(), [
-                'hello world',
-                'yeah'
-            ]);
-        });
-    });
-
+QUnit.test("can add messages to chatter", function (assert) {
+  var chatter = createMessages('hello world', 'yeah');
+  assertItems(chatter.messages(), [
+    'hello world',
+    'yeah'
+  ]);
 
   function createMessages() {
     var chatter = new Chatter();
@@ -23,3 +18,4 @@ describe('spike riots', function() {
   };
 
 });
+
