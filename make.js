@@ -57,13 +57,16 @@ target.gen = function() {
   cp("-f", "bower_components/jquery/dist/jquery.min.js", "dist");
 };
 
+
 // watch for changes: ./make.js watch
 target.watch = function() {
+  var exec = require('child_process').exec;
 
   // scripts
-  gaze("src/**/*.js", function() {
+  gaze(["src/**/*.js","test/**/*.js"], function() {
     this.on('all', function(e, file) {
       concat();
+      exec("refresh_firefox.sh");
     });
   });
 
