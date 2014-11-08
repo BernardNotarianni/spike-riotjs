@@ -51,22 +51,8 @@ function concat() {
   templates();
 }
 
-// Test the API on server side (node.js)
-target.test = function() {
-
-  concat();
-
-  // generate API files
-//  (header + cat("src/api/*.js") + footer).to("dist/api.js");
-
-  // run tests
-  require("./test/index.js");
-};
-
-
 // concat target
 target.concat = concat;
-
 
 // generate application
 target.gen = function() {

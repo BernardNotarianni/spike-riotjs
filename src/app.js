@@ -7,8 +7,6 @@ var chatter = new Chatter();
   routes({chatter: chatter});
   
   // Binds the Chatter Presenter
-  chatterPresenter($("#chatapp"), {
-    model: chatter,
-    message_template: $('#message-template').html()
-  });
+  chatterPresenter($("#chatapp"), chatter);
+
 })(jQuery);

@@ -1,10 +1,10 @@
 'use strict';
 
-function chatterPresenter(element, options) {
+function chatterPresenter(element, model) {
   element = $(element);
 
-  var message_template = options.message_template,
-      chatter = options.model,
+  var message_template = template['message-template'],
+      chatter = model,
       $messagesListElement = element.find('#messages-list');
 
   element.on('keyup', '#new-message', function (e) {
