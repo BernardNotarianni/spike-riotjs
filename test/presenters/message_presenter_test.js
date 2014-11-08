@@ -15,11 +15,8 @@ QUnit.test("detect 'enter' key to add a new item", function (assert) {
 
   enterValueInForm(form, '#new-message', 'I type this message');
 
-  // Added to the model
-  assert.equal('I type this message', added);
-
-  // Added to the DOM as list item element
-  assert.equal(1, findLiContaining(form, 'I type this message').length);
+  assert.equal('I type this message', added, "message added to the model");
+  assert.equal(1, findLiContaining(form, 'I type this message').length, "text added to the DOM");
 });
 
 function findLiContaining(element, text) {

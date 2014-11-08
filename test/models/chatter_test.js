@@ -7,7 +7,7 @@ QUnit.test("can add messages to chatter", function (assert) {
   assertItems(chatter.messages(), [
     'hello world',
     'yeah'
-  ]);
+  ], "messages added to the chatter model");
 
   function createMessages() {
     var chatter = new Chatter();
@@ -15,8 +15,8 @@ QUnit.test("can add messages to chatter", function (assert) {
     return chatter;
   };
 
-  function assertItems(items, expected) {
-    assert.equal(JSON.stringify(items), JSON.stringify(expected));
+  function assertItems(items, expected, message) {
+    assert.equal(JSON.stringify(items), JSON.stringify(expected), message);
   };
 });
 
