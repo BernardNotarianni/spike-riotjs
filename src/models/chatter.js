@@ -10,6 +10,7 @@ function Chatter() {
 
   self.add = function(message) {
     messages.push(message);
+    self.trigger('add', message);
   };
 
 

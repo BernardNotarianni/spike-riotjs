@@ -1,7 +1,5 @@
 'use strict';
 
-QUnit.module("chatter");
-
 QUnit.test("can add messages to chatter", function (assert) {
   var chatter = createMessages('hello world', 'yeah');
   assertItems(chatter.messages(), [

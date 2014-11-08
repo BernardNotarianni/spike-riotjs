@@ -15,11 +15,9 @@ function chatterPresenter(element, options) {
     }
   });
 
-  // Listen to model events
-  chatter.on("add", add);
-
   // Private functions
   function add(message) {
+    chatter.add(message);
     var messageElement = $(riot.render(message_template, {id: 1, message: message}));
     $messagesListElement.append(messageElement);
   }

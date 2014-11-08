@@ -9,9 +9,28 @@ var gaze = require('gaze'),
   footer = '})(typeof top == "object" ? window : exports);';
 
 
-// initialize repository
+// Initialize repository
 function init() {
   mkdir("-p", "dist");
+}
+
+// Create template hash-map from html files found in 'templates' subdir
+function templates ()
+{
+  var templateFiles = ls("templates");
+ 
+  var templates = templateFiles.map(function(fileName) {
+    var html = cat('templates/'+fileName).replace(/(\r\n|\n|\r)/gm,"");
+    var templateName = fileName.split('.').shift();
+    return "template['" + templateName + "'] = '" + html + "';";
+  });
+
+  var concatenedTemplates = header + 'template = {};';
+  templates.forEach(function(template) {
+    concatenedTemplates += template;
+  });
+  concatenedTemplates += footer;
+  concatenedTemplates.to("dist/templates.js");
 }
 
 // Make a single file out of everything
@@ -29,6 +48,7 @@ function concat() {
 
   js.to("dist/spike.js");
 
+  templates();
 }
 
 // Test the API on server side (node.js)

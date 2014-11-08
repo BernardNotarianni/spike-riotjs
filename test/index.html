@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Tests Spike RiotJS</title>
-  <link rel="stylesheet" href="qunit-1.15.0.css"
+  <link rel="stylesheet" href="qunit-1.15.0.css"/>
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/riotjs/riot.min.js"></script>
-  <script src="../src/models/chatter.js"></script>
-  <script src="../src/presenters/message_presenter.js"></script>
+  <script src="qunit-1.15.0.js"></script>
 </head>
 <body>
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
-  <script src="qunit-1.15.0.js"></script>
   <script src="./test_helper.js"></script>
+
+  <script src="../src/models/chatter.js"></script>
+  <script src="../src/presenters/message_presenter.js"></script>
+  <script src="../dist/templates.js"></script>
+
   <script src="./models/chatter_test.js"></script>
+  <script src="./presenters/message_presenter_test.js"></script>
 </body>
 </html>
