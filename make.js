@@ -72,7 +72,8 @@ target.watch = function() {
   gaze(["src/**/*.js","test/**/*.js"], function() {
     this.on('all', function(e, file) {
       concat();
-      exec("refresh_firefox.sh");
+      //exec("refresh_firefox.sh"); 
+      refresh_chrome();
     });
   });
 
@@ -86,3 +87,22 @@ target.watch = function() {
 };
 
 
+//
+// To enable auto-refresh of chrome, start with following command,
+// and open the QUnit test page.
+//
+// $ google-chrome --remote-debugging-port=9222 &
+//
+function refresh_chrome() {
+  var Chrome = require('chrome-remote-interface');
+  Chrome(function (chrome) {
+    with (chrome) {
+      on('Page.loadEventFired', close);
+      Network.enable();
+      Page.enable();
+      Page.reload({ignoreCache: true});
+    }
+  }).on('error', function () {
+    console.error('Cannot connect to Chrome');
+  });  
+};

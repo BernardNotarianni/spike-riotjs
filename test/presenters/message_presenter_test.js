@@ -31,6 +31,3 @@ function enterValueInForm(formRoot, inputFieldId, value) {
 
   formRoot.find(inputFieldId).val(value).trigger(e);  
 }
-
-
-
