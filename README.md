@@ -3,7 +3,9 @@ Spike-riotjs
 
 Un spike pour [riotjs](https://muut.com/riotjs)
 
-### Build
+### Build 
+
+Pour démarrer rapidement
 
 ``` sh
 bower install
@@ -13,6 +15,4 @@ open index.html
 ./make.js watch
 ```
 
-### Tester
 
-Ouvrir la console et tapper `chatter.trigger("add","hello world");`
